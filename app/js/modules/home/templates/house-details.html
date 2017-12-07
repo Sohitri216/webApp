@@ -1,0 +1,53 @@
+<div class="header-booking-details display-head-web">
+    <div class="customer-details" ng-if="orderDetailsForHeader.bedroom" ng-click="navigate('room')">
+        <div class="room-count font-15">{{orderDetailsForHeader.bedroom}}</div>
+        <div class="room-label">BEDROOMS</div>
+    </div>
+    <div class="customer-details" ng-if="orderDetailsForHeader.bathroom" ng-click="navigate('room')">
+        <div class="room-count font-15">{{orderDetailsForHeader.bathroom}}</div>
+        <div class="room-label">BATHROOMS</div>
+    </div>
+    <div class="customer-details width-20 width-30" ng-if="orderDetailsForHeader.startTime" ng-click="navigate('date')">
+        <div class="room-count font-15 text-overflow-ellipsis">{{orderDetailsForHeader.startTime | date : 'EEEE,MMM dd'}}</div>
+        <div class="room-label">SCHEDULE DATE</div>
+    </div>
+    <div class="customer-details width-20" ng-if="orderDetailsForHeader.address" ng-click="navigate('address')">
+        <div class="room-count adjust-address font-15">{{orderDetailsForHeader.address}}</div>
+        <div class="room-label">ADDRESS</div>
+    </div>
+    <div class="subtotal pull-right" ng-if="orderDetailsForHeader.price>=0">
+        <div class="total-price font-15"><sup class="sup-dollar">&#36;</sup> {{ orderDetailsForHeader.totalPrice||orderDetailsForHeader.price}}</div>
+        <div class="total-label">SUBTOTAL</div>
+    </div>
+</div>
+<div class="row header-booking-details display-head-mobile margin-side-0">
+    <div class="col-xs-8 pad-side-0">
+        <div class="col-xs-12 pad-side-0">
+            <div class="customer-details adjust-width-minor col-xs-4" ng-if="orderDetailsForHeader.bedroom" ng-click="navigate('room')">
+                <div class="room-count font-15">{{orderDetailsForHeader.bedroom}}</div>
+                <div class="room-label">BEDROOMS</div>
+            </div>
+            <div class="customer-details adjust-width-major col-xs-8" ng-if="orderDetailsForHeader.startTime" ng-click="navigate('date')">
+                <div class="room-count font-15 text-overflow-ellipsis">{{orderDetailsForHeader.startTime | date : 'EEEE,MMM dd'}}</div>
+                <div class="room-label">SCHEDULE DATE</div>
+            </div>
+        </div>
+        <div class="col-xs-12 pad-side-0">
+            <div class="customer-details adjust-width-minor col-xs-4" ng-if="orderDetailsForHeader.bathroom" ng-click="navigate('room')">
+                <div class="room-count font-15">{{orderDetailsForHeader.bathroom}}</div>
+                <div class="room-label">BATHROOMS</div>
+            </div>
+            <div class="customer-details adjust-width-major col-xs-8" ng-if="orderDetailsForHeader.address" ng-click="navigate('address')">
+                <div class="room-count adjust-address font-15">{{orderDetailsForHeader.address}}</div>
+                <div class="room-label">ADDRESS</div>
+            </div>
+        </div>
+    </div>
+    <div class="subtotal pull-right col-xs-4 pad-side-0 pad-tb" ng-if="orderDetailsForHeader.price>=0">
+        <div class="total-price"><sup class="sup-dollar">&#36;</sup> {{ orderDetailsForHeader.totalPrice||orderDetailsForHeader.price}}</div>
+        <div class="total-label">SUBTOTAL</div>
+    </div>
+</div>
+<div class="wrapper-landing-child" ng-class="{'wrap-height':heightWrap}">
+    <div ui-view class="background-img-100" ng-class="{'adjust-dateTime-height':controlBackgroundImage}"></div>
+</div>

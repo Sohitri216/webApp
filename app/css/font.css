@@ -1,0 +1,34 @@
+@font-face {
+    font-family: 'FuturaPTBold';
+    src: url('../resources/fonts/Futura/FuturaPTBold.otf');
+}
+
+@font-face {
+    font-family: 'FuturaPT';
+    src: url('../resources/fonts/Futura/FUTURAN.TTF');
+}
+
+@font-face {
+    font-family: 'FuturaPTBook';
+    src: url('../resources/fonts/Futura/FuturaPTBook.otf');
+}
+
+@font-face {
+    font-family: 'FuturaPTLight';
+    src: url('../resources/fonts/Futura/FuturaPTLight.otf');
+}
+
+@font-face {
+    font-family: 'FuturaPTMedium';
+    src: url('../resources/fonts/Futura/FuturaPTMedium.otf');
+}
+
+@font-face {
+    font-family: 'FuturaPTLightOblique';
+    src: url('../resources/fonts/Futura/FuturaPTLightOblique.otf');
+}
+
+@font-face {
+    font-family: 'FuturaPTMediumOblique';
+    src: url('../resources/fonts/Futura/FuturaPTMediumOblique.otf');
+}

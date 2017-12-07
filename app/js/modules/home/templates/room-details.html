@@ -1,0 +1,38 @@
+<div class="container-fluid pad-1" ng-init="init()">
+    <div class="fixed-modal" ng-class="{'show-fixed-modal':showModal}">
+        <div class="overlay">
+            <img src="./resources/img/close.svg" class="close" ng-click="closeModal()">
+        </div>
+        <div class="content pad-mobile" ng-bind-html="cleaningInformation">
+        </div>
+        <!-- </div> -->
+    </div>
+    <div class="booking-wrapper">
+        <div class="booking-select">
+            <div class="booking-header">Tell us about your place</div>
+            <div class="booking-body">
+                <div class="room-container margin-lr-0">
+                    <p class="room-header">NUMBER OF BEDROOMS</p>
+                    <div class="room-body">
+                        <span class="bed-bath-span" ng-class="{'selected-span':room.selected}" ng-repeat="room in bedRoomOptions" ng-click="setBedRoomCount(room.value)">{{room.value}}</span>
+                    </div>
+                </div>
+                <div class="room-container margin-lr-0">
+                    <p class="room-header-bathroom">NUMBER OF BATHROOMS</p>
+                    <div class="room-body">
+                        <span class="bed-bath-span" ng-class="{'selected-span':room.selected}" ng-repeat="room in bathRoomOptions" ng-click="setBathRoomCount(room.value)">{{room.value}}</span>
+                    </div>
+                </div>
+                <div class="room-container margin-lr-0">
+                    <p class="room-header-bathroom">CLEAN TYPE <img src="./resources/img/question.svg" class="image-icon" ng-click="openModal()"></p>
+                    <div class="room-body">
+                        <span class="bed-bath-span width-clean-type" ng-class="{'selected-span':type.selected}" ng-repeat="type in cleanTypes" ng-click="setCleaningType(type.value)">{{type.name}}</span>
+                    </div>
+                </div>
+                <div class="next-button">
+                    <button ng-click="submitCleaningInfo()">Next</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

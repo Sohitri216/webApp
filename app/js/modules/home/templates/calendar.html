@@ -1,0 +1,21 @@
+<div class="header">
+    <i class="fa fa-angle-left pad-left-15" ng-click="previous()"></i>
+    <span class="font-medium-futura">{{month.format("MMMM, YYYY")}}</span>
+    <i class="fa fa-angle-right pad-right-15" ng-click="next()"></i>
+</div>
+<div class="week names">
+    <span class="day cell-style pad-3-all">Sun</span>
+    <span class="day cell-style pad-3-all">Mon</span>
+    <span class="day cell-style pad-3-all">Tue</span>
+    <span class="day cell-style pad-3-all">Wed</span>
+    <span class="day cell-style pad-3-all">Thu</span>
+    <span class="day cell-style pad-3-all">Fri</span>
+    <span class="day cell-style pad-3-all">Sat</span>
+</div>
+<div class="week" ng-repeat="week in weeks">
+    <span class="day cell-style cursor-pointer" ng-style="personColour" ng-class="{'today': day.isToday, 'different-month': !day.isCurrentMonth, 'selected': day.date.isSame(selected) && !day.disable && day.isCurrentMonth,'disable-date':day.disable,'hover-effect':day.hover && !day.disable && day.isCurrentMonth}" ng-click="select(day)" ng-repeat="day in week.days" ng-mouseenter="changeColor(day,true)" ng-mouseleave="changeColor(day,false)">
+    <label class="display-block font-weight-normal day-cell" ng-class="{'cursor-pointer':!day.disable}">{{day.number}}</label>
+    <label class="display-block font-weight-normal off-style" ng-class="{'cursor-pointer':!day.disable}" ng-if="!day.disable && day.off!='0'"> ${{day.off}} off</label>
+    <label class="display-block font-weight-normal off-style display-none-mobile" ng-class="{'cursor-pointer':!day.disable}" ng-if="day.disable && day.sundayClosed">Sunday Closed</label>
+    </span>
+</div>

@@ -1,0 +1,55 @@
+<div class="container-fluid pad-1">
+  <div class="booking-wrapper" ng-init="init()">
+    <div class="booking-select pad-top-25">
+      <div class="booking-header">Cleaning location</div>
+      <div class="booking-body">
+        <div class="location-container">
+          <div class="address-field">
+            <p class="location-header">ADDRESS</p>
+            <form>
+              <div class="location-body input-address-text">
+                <input type="text" ng-model="cleanDetails.address" uib-typeahead="address.addr for address in addresses | filter:$viewValue | limitTo:8" typeahead-on-select="onSelect($item, $model, $label)">
+                <!-- <input class="form-control" g-places-autocomplete ng-model="place" force-selection="true" /> -->
+                <!-- <input type="text" id="txtAutocomplete" placeholder="Enter your address" /> -->
+              </div>
+            </form>
+          </div>
+          <div class="appartment-field">
+            <p class="location-header">APT. NUMBER</p>
+            <div class="location-body">
+              <input type="text" ng-model="cleanDetails.aptNo">
+            </div>
+          </div>
+          <div class="location-field">
+            <p class="location-header">HOW DO WE ACCESS YOUR LOCATION<span class="question-mark sub-head-qs">?</span></p>
+            <div class="room-body overflow-auto">
+              <span class="pull-left" ng-class="{'selected-span':access.selected}" ng-repeat="access in accessMethods" ng-click="accessWay(access.value)">{{access.value}}</span>
+            </div>
+            <!-- {{vm.otherWay}} -->
+            <div class="other-way" ng-if="vm.otherWay=='true'">
+              <textarea placeholder="How do we get in?" ng-model="cleanDetails.otherAccessWay"></textarea>
+            </div>
+          </div>
+          <div class="location-field" ng-if="!noAddOn">
+            <p class="location-header">ADD ON'S<span class="question-mark sub-head-qs">?</span></p>
+            <div class="room-body overflow-auto">
+              <span ng-class="{'selected-span':add.selected}" class="pull-left margin-bt-10" ng-repeat="add in addOn" ng-click="additionalService(add.id)">
+                            <label class="pull-left">{{add.serviceType}}</label>
+                            <label class="pull-right">{{add.price}}</label>
+                            </span>
+            </div>
+          </div>
+          <div class="location-field">
+            <p class="location-header">SPECIAL NOTES/INSTRUCTIONS</p>
+            <div class="other-way">
+              <textarea rows="4" ng-model="cleanDetails.notes"></textarea>
+            </div>
+          </div>
+        </div>
+        <div class="next-button mtb-2">
+          <button ng-click="submitRoomInfo()">Next</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

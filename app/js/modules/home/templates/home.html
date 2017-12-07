@@ -1,0 +1,42 @@
+<div class="wrapper-main">
+    <header class="header-style">
+        <nav class="navbar navbar-inverse background-theme height-100">
+            <div class="container-fluid height-100 pad-adjust-head">
+                <div class="navbar-header height-100">
+                    <button type="button" class="navbar-toggle toggle-menu" data-toggle="collapse" data-target="#myNavbar">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <div class="pull-left tidi-logo navbar-brand pad-0 height-100">
+                        <a href="https://www.tidiclean.com/">
+                        <img src="./resources/img/tidi_logo.png"></a>
+                    </div>
+                </div>
+                <div class="collapse navbar-collapse menu-collapse tidi-top-container" id="myNavbar">
+                    <ul class="nav navbar-nav header-menu pad-top-13">
+                        <li><a href="https://www.tidiclean.com/checklist/">Checklist</a></li>
+                        <li><a href="https://www.tidiclean.com/what-we-do/">What We Do</a></li>
+                        <li><a href="#" ng-click="gotoStart()">Booking</a></li>
+                        <li><a href="https://www.tidiclean.com/smart-cleaning-2/">Smart Cleaning</a></li>
+                        <li><a href="https://www.tidiclean.com/contact/">Contact</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <main ui-view class="main-view" ng-class="{'adjust-panel-height':abstractViewFullWidth,'cal-height':largeScreen,'pad-height':padScreen}"></main>
+    <footer class="footer-style">
+        <div class="footer-wrapper">
+            <ul>
+                <li><a href="http://www.instagram.com/squarespace" target="_blank">INSTAGRAM</a></li>
+                <li><a href="https://www.tidiclean.com/become-a-partner/">BECOME A PARTNER</a></li>
+                <li><a href="http://www.facebook.com/squarespace" target="_blank">FACEBOOK</a></li>
+            </ul>
+            <p class="copyright">
+                <label>COPYRIGHT 2016 TIDI.</label>
+                <label class="right-reserved">ALL RIGHTS RESERVED</label>
+            </p>
+        </div>
+    </footer>
+</div>

@@ -1,0 +1,57 @@
+<div class="container-fluid pad-1">
+    <div class="booking-wrapper" ng-init="init()">
+        <form name="locationAddForm" novalidate="" ui-form="submitRoomInfo">
+            <div class="booking-select pad-top-25">
+                <div class="booking-header">Cleaning location</div>
+                <div class="booking-body">
+                    <div class="location-container">
+                        <div class="address-field">
+                            <p class="location-header">ADDRESS</p>
+                            <form>
+                                <div class="location-body input-address-text">
+                                    <input type="text" ng-model="orderDetails.address" uib-typeahead="address.addr for address in addresses | filter:$viewValue | limitTo:8" typeahead-on-select="onSelect($item, $model, $label)" placeholder="Enter Address" name="address" ui-required ng-class="{'valid-field-logo':locationAddForm.address.$valid,'invalid-field-logo':locationAddForm.address.$invalid && locationAddForm.address.$dirty}">
+                                    <!-- <input class="form-control" g-places-autocomplete ng-model="place" force-selection="true" /> -->
+                                    <!-- <input type="text" id="txtAutocomplete" placeholder="Enter your address" /> -->
+                                </div>
+                            </form>
+                        </div>
+                        <div class="appartment-field">
+                            <p class="location-header">APT. NUMBER</p>
+                            <div class="location-body">
+                                <input type="text" ng-model="orderDetails.aptNo" placeholder="Apt No" name="aptNo" ui-required ng-class="{'valid-field-logo':locationAddForm.aptNo.$valid,'invalid-field-logo':locationAddForm.aptNo.$invalid && locationAddForm.aptNo.$dirty}">
+                            </div>
+                        </div>
+                        <div class="location-field">
+                            <p class="location-header">HOW DO WE ACCESS YOUR LOCATION<span class="question-mark sub-head-qs">?</span></p>
+                            <div class="room-body overflow-auto">
+                                <span class="pull-left access-width" ng-class="{'selected-span':access.selected}" ng-repeat="access in accessMethods" ng-click="setAccessWay(access)">{{access.value}}</span>
+                            </div>
+                            <!-- {{vm.otherWay}} -->
+                            <div class="other-way" ng-if="isOtherAccess">
+                                <textarea class="p10" placeholder="How do we get in?" ng-model="details.otherAccessWay" name="otherAccess" ui-required ng-class="{'valid-field-logo':locationAddForm.otherAccess.$valid,'invalid-field-logo':locationAddForm.otherAccess.$invalid && locationAddForm.otherAccess.$dirty}"></textarea>
+                            </div>
+                        </div>
+                        <div class="location-field" ng-if="additionalService.length">
+                            <p class="location-header">ADD ON'S<span class="question-mark sub-head-qs">?</span></p>
+                            <div class="room-body overflow-auto">
+                                <span ng-class="{'selected-span':add.selected}" class="pull-left margin-bt-10 access-width" ng-repeat="add in additionalService" ng-click="saveAdditionalService(add)" uib-tooltip="{{add.name}}" tooltip-append-to-body="true" tooltip-placement="top">
+                            <label class="pull-left width-60 text-ellipsis">{{add.name}}</label>
+                            <label class="pull-right width-40">$ {{add.price}}</label>
+                            </span>
+                            </div>
+                        </div>
+                        <div class="location-field">
+                            <p class="location-header">SPECIAL NOTES/INSTRUCTIONS</p>
+                            <div class="other-way">
+                                <textarea class="p10" rows="4" ng-model="orderDetails.notes" placeholder="Enter Special Notes"></textarea>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="next-button mtb-2">
+                        <button type="submit" xng-click="submitRoomInfo()">Next</button>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>

@@ -1,0 +1,20 @@
+<div class="wrapper-landing container-fluid">
+    <div class="background-img-100">
+        <!-- <div class="book-parent"> -->
+        <div class="booking-wrapper">
+            <div class="booking-select" ng-init="vm.init()">
+                <div class="booking-header tidi-header">Tidi Booking</div>
+                <div class="booking-body">
+                    <form class="booking-form" ng-submit="vm.bookingProperty()">
+                        <select class="style-select-property border-right-0" ng-model="vm.filterListBedroom" ng-change="vm.changeRoom()" ng-options="filter as filter for filter in vm.filterTypeBedroom">
+                        </select>
+                        <select class="style-select-property" ng-change="vm.changeRoom()" ng-model="vm.filterListBathroom" ng-options="filter as filter for filter in vm.filterTypeBathroom">
+                        </select>
+                        <button class="book-now" ng-click="buttonClick()">Book Now</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <!-- </div> -->
+    </div>
+</div>

@@ -1,0 +1,135 @@
+<div class="container-fluid" ng-init="init()">
+    <div class="row payment-container">
+        <form name="userInfoForm" role="form" novalidate="" ui-form="submitData">
+            <div class="col-md-3 col-md-push-9 col-sm-2 col-sm-push-10 col-xs-12 right-panel-receipt pad-top-2 backgroung-grey pad-bt-6 opacity-receipt">
+                <div class="receipt-wrapper">
+                    <div class="receipt-header">Receipt</div>
+                    <div class="receipt-details">
+                        <p class="margin-tp-10">{{orderDetails.bedroom}} Bedroom, {{orderDetails.bathroom}} Bathroom</p>
+                        <p class="divider"></p>
+                        <p class="margin-tp-10"><span ng-if="orderDetails.servicetype==='full'">{{rentalConfig[orderDetails.rentalId]}}, </span>{{orderDetails.startTime | date :'EEEE,MMM dd,yyyy'}} at {{orderDetails.selectedSlot}}</p>
+                        <p class="divider"></p>
+                        <div class="margin-tp-10">
+                            <!-- <p class="mb-0">New Market Street, 1735</p>
+                            <p>Philadelphia, PA 1921</p> -->
+                            <!-- <p class="mb-0">New Market Street, 1735</p> -->
+                            <p>{{orderDetails.aptNo}} {{orderDetails.address}}</p>
+                        </div>
+                        <p class="divider" ng-if="orderDetails.additional_services.length"></p>
+                        <div class="margin-tp-10 margin-bt-10" ng-if="orderDetails.additional_services.length">
+                            <span>Add On:</span>
+                            <span>{{addOn}}</span>
+                        </div>
+                        <div class="margin-tp-10 margin-bt-10">
+                            <!-- <input type="text" placeholder="Enter coupon" ng-model="coupon"> -->
+                            <div class="input-group">
+                                <input type="text" class="form-control coupon-text" placeholder="Enter coupon code" ng-model="couponCode" aria-label="..." ng-disabled="applied">
+                                <div class="input-group-btn pull-left">
+                                    <!-- Buttons -->
+                                    <button class="btn btn-default coupon-button" ng-click="applyCoupon()" type="button" ng-disabled="applied">Apply</button>
+                                </div>
+                            </div>
+                        </div>
+                        <p class="divider"></p>
+                        <div class="width-100 margin-tp-10">
+                            <span class="inline-block total-span bold-total">SUBTOTAL</span>
+                            <span class="inline-block amount-span bold-total">&#36;{{orderDetails.priceWithoutTax}}</span>
+                        </div>
+                        <div class="width-100 margin-bt-10">
+                            <span class="inline-block total-span">Tax</span>
+                            <span class="inline-block amount-span">+&#36;{{orderDetails.taxAmount}}</span>
+                        </div>
+                        <p class="divider"></p>
+                        <div class="width-100 margin-tp-10">
+                            <span class="inline-block total-span bold-total">TOTAL</span>
+                            <span class="inline-block amount-span bold-total">&#36;{{orderDetails.totalPrice}}</span>
+                        </div>
+                        <div class="submit-button margin-16 submit-desktop">
+                            <button type="submit" ng-if="!showSpinner">Submit</button>
+                            <button class="disable-button" ng-if="showSpinner" ng-disabled="true"><i class="fa fa-spinner fa-pulse fa-fw spinner-font"></i></button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-9 col-md-pull-3 col-sm-10 col-sm-pull-2 col-xs-12 left-panel-payment pad-tp-6">
+                <div class="booking-wrapper">
+                    <div class="booking-select">
+                        <div class="booking-header pad-bt-0">Almost there<span class="question-mark">!</span></div>
+                        <p class="sub-header text-center line-height-1">We accept all major credit cards, processed securely by Stripe</p>
+                        <div class="booking-body">
+                            <div class="payment-container">
+                                <div class="credit-card">
+                                    <p class="location-header">CREDIT CARD</p>
+                                    <div class="location-body">
+                                        <div class="stripe-element" id='card-number'></div>
+                                    </div>
+                                </div>
+                                <div class="exp-date">
+                                    <p class="location-header">EXP. DATE</p>
+                                    <div class="location-body">
+                                        <div class="stripe-element" id="card-expiry"></div>
+                                    </div>
+                                </div>
+                                <div class="cvv">
+                                    <p class="location-header">CVV</p>
+                                    <div class="location-body">
+                                        <div class="stripe-element" id="card-cvc"></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="user-info-container overflow-auto">
+                                <div class="user-creds pull-left">
+                                    <p class="location-header">FULL NAME</p>
+                                    <div class="location-body">
+                                        <input type="text" name="fullName" placeholder="Enter Full Name" ng-model="userInfo.fullName" ng-class="{'valid-field-logo':userInfoForm.fullName.$valid,'invalid-field-logo':userInfoForm.fullName.$invalid && userInfoForm.fullName.$dirty}" ui-required ui-pattern="fullName">
+                                    </div>
+                                </div>
+                                <div class="user-creds margin-top-20 pull-right">
+                                    <p class="location-header">EMAIL ADDRESS</p>
+                                    <div class="location-body">
+                                        <input type="text" name="email" placeholder="Enter Email" ng-model="userInfo.email" ng-class="{'valid-field-logo':userInfoForm.email.$valid,'invalid-field-logo':userInfoForm.email.$invalid && userInfoForm.email.$dirty}" ui-required ui-email>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="user-info-container overflow-auto">
+                                <div class="user-creds pull-left">
+                                    <p class="location-header">PHONE</p>
+                                    <div class="location-body">
+                                        <input type="text" name="contact" placeholder="Enter Phone Number" ng-model="userInfo.phone" ng-class="{'valid-field-logo':userInfoForm.contact.$valid,'invalid-field-logo':userInfoForm.contact.$invalid && userInfoForm.contact.$dirty}" ui-required ui-number ui-allowed-upto="10" ui-minlength="10" />
+                                    </div>
+                                </div>
+                                <div class="user-creds margin-top-20 pull-right">
+                                    <p class="location-header">HOW DO WE CONTACT YOU?</p>
+                                    <div class="location-body">
+                                        <div class="contact-container">
+                                            <span ng-class="{'selected-span-border':contact.selected}" ng-repeat="contact in contactType" ng-click="contactMethod(contact)">{{contact.value}}</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Password container for future use -->
+                            <!--    <div class="user-info-container overflow-auto">
+                                <div class="user-creds pull-left">
+                                    <p class="location-header">PASSWORD</p>
+                                    <div class="location-body">
+                                        <input type="password">
+                                    </div>
+                                </div>
+                                <div class="user-creds pull-right">
+                                    <p class="location-header">CONFIRM PASSWORD</p>
+                                    <div class="location-body">
+                                        <input type="password">
+                                    </div>
+                                </div>
+                            </div> -->
+                        </div>
+                        <div class="submit-button margin-16 submit-tab">
+                            <button type="submit" ng-if="!showSpinner">Submit</button>
+                            <button class="disable-button" ng-if="showSpinner" ng-disabled="true"><i class="fa fa-spinner fa-pulse fa-fw spinner-font"></i></button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>

@@ -1,0 +1,24 @@
+<div class="container-fluid pad-7">
+    <div class="booking-wrapper">
+        <div class="booking-select" ng-init="init()">
+            <div class="booking-header">Tell us about your place</div>
+            <div class="booking-body">
+                <div class="room-container">
+                    <p class="room-header">NUMBER OF BEDROOMS</p>
+                    <div class="room-body">
+                        <span class="bed-bath-span" ng-class="{'selected-span':room.selected}" ng-repeat="room in bedrooms" ng-click="bedCount(room.value)">{{room.value}}</span>
+                    </div>
+                </div>
+                <div class="room-container">
+                    <p class="room-header-bathroom">NUMBER OF BATHROOMS</p>
+                    <div class="room-body">
+                        <span class="bed-bath-span" ng-class="{'selected-span':room.selected}" ng-repeat="room in bathrooms" ng-click="bathCount(room.value)">{{room.value}}</span>
+                    </div>
+                </div>
+                <div class="next-button">
+                    <button ng-click="submitRoomInfo()">Next</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

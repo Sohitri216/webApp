@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html ng-app="TidiWebPanel" ng-class="{'height-auto':!heightWrap,'height-100':heightWrap}">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
+    <title>Booking — TIDI</title>
+    <!-- <link rel="shortcut icon" href="/resources/img/favicon.ico" type="image/x-icon" /> -->
+  <link rel="shortcut icon" href="resources/img/favicon.ico" type="image/x-icon">
+    <link href="css/vendor.min.css" rel="stylesheet">
+    <link href="css/app.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css" rel="stylesheet">
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDTPY6v7iC5JSCgErJFim-Ab7fui0XnyOs&libraries=places"></script>
+     <!--<script src="https://maps.googleapis.com/maps/api/js?libraries=places"></script>-->
+</head>
+
+<body class="height-100">
+    <div ui-view ng-class="{'height-100':abstractViewFullWidth}"></div>
+    <script src="https://js.stripe.com/v3/"></script>
+    <script src="./js/vendor.min.js"></script>
+    <script src="./js/main.min.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,582 @@
+/*Height*/
+
+@media(max-width:1920px) and (min-width:1680px) {
+    .cal-height {
+        height: 900px !important;
+    }
+    .pad-height {
+        min-height: 897px !important;
+    }
+    .wrap-height {
+        height: 95% !important;
+    }
+}
+
+@media(max-width:1680px) and (min-width:1400px) {
+    .cal-height {
+        height: 800px !important;
+    }
+    .pad-height {
+        height: auto !important;
+    }
+    .wrap-height {
+        height: 91% !important;
+    }
+}
+
+@media(max-width:1400px) {
+    .cal-height {
+        height: 721px !important;
+    }
+    .pad-height {
+        height: 721px !important;
+    }
+}
+
+
+@media(max-width: 1368px) {
+    .cal-height {
+        height: auto !important;
+    }
+    .pad-height {
+        height: auto !important;
+    }
+}
+
+@media (min-height: 1024px) and (max-width: 1366px) {
+    .cal-height {
+        height: 721px !important;
+    }
+    .pad-height {
+        height: auto !important;
+    }
+}
+
+
+@media (max-width: 1057px) {
+    .location-container {
+        width: 67% !important;
+    }
+    .cal-height {
+        height: auto !important;
+    }
+}
+
+@media (max-width: 1057px) {
+    .location-container {
+        width: 70% !important;
+    }
+}
+
+
+@media (min-height: 600px) and (max-width: 960px) {
+    .cal-height {
+        height: 669px !important;
+    }
+    .pad-height {
+        height: auto !important;
+    }
+}
+
+@media (min-height: 1280px) and (max-width: 800px) {
+    .cal-height {
+        height: 977px !important;
+    }
+    .pad-height {
+        height: auto !important;
+    }
+}
+
+@media (min-height: 1024px) and (max-width: 768px) {
+    .cal-height {
+        height: 721px !important;
+    }
+    .pad-height {
+        height: auto !important;
+    }
+}
+
+@media (max-width: 980px) {
+    .location-container {
+        width: 80% !important;
+    }
+}
+
+@media (max-width: 863px) {
+    .location-container {
+        width: 90% !important;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*@media (max-width: 768px) {
+    .cal-height {
+        height: 721px !important;
+    }
+}*/
+
+@media(max-width: 515px) {
+    .location-container {
+        width: 90% !important;
+    }
+}
+
+@media(max-width: 968px) {
+    .tidi-logo {
+        img {
+            max-height: 94px !important;
+        }
+    }
+    .customer-details:first-child {
+        padding: 0% !important;
+    }
+    .width-adjust-freq {
+        width: 85% !important;
+    }
+    .choose-date {
+        width: 86% !important;
+    }
+    .time-slot-list {
+        width: 60% !important;
+    }
+    .pad-left-0 {
+        padding-left: 0 !important;
+    }
+}
+
+@media(max-width: 952px) {
+    .book-now {
+        width: 16%;
+    }
+    .style-select-property {
+        width: 20%;
+    }
+    .book-now {
+        width: 20%;
+    }
+}
+
+
+
+@media(max-width: 772px) {
+    .access-width {
+        width: 31% !important;
+    }
+}
+
+
+@media(max-width: 767px) {
+    .navbar-toggle {
+        margin-top: 32px!important;
+    }
+    /*.cal-height {
+        height: calc(100% - 241px) !important;
+    }*/
+}
+
+@media(max-width: 716px) {
+    .access-width {
+        width: 30% !important;
+    }
+}
+
+@media(max-width: 693px) {
+    /* .width-30 {
+        width: 25% !important;
+    }*/
+    .display-none-mobile {
+        display: none !important;
+    }
+}
+
+@media(max-width: 648px) {
+    .text-overflow-ellipsis {
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        overflow: hidden;
+    }
+    .width-30 {
+        width: auto !important;
+    }
+}
+
+@media(max-width: 620px) and (min-width: 469px) {
+    .subtotal {
+        /*width: 20% !important;*/
+        width: 21% !important;
+    }
+    /*.width-20 {
+        width: 25% !important;
+    }
+    .width-30 {
+        width: 30% !important;
+    }*/
+    .time-slot-list {
+        width: 70% !important;
+    }
+}
+
+
+@media(max-width: 554px) {
+    .footer-wrapper {
+        ul {
+            padding-left: 0;
+            li {
+                padding: 10px 20px !important;
+            }
+        }
+    }
+    .adjust-panel-height {
+        height: calc(100% - 271px) !important;
+    }
+    .width-adjust-freq {
+        width: 100% !important;
+    }
+    .choose-date {
+        width: 100% !important;
+    }
+    .time-slot-list {
+        width: 90% !important;
+        margin: 0 auto;
+    }
+    .calendar-style>div.week>span.day {
+        height: 60px;
+    }
+    .day-cell {
+        margin-bottom: 0 !important;
+    }
+}
+
+
+
+@media(max-width: 500px) {
+    .adjust-panel-height {
+        /*height: calc(100% - 220px) !important;*/
+        height: calc(100% - 210px) !important;
+        min-height: 300px;
+    }
+    .tidi-logo {
+        img {
+            max-height: 53px !important;
+        }
+    }
+    .header-style {
+        height: 99px !important;
+    }
+    .footer-wrapper {
+        ul {
+            padding-left: 0;
+            li {
+                padding: 0 10px !important;
+            }
+        }
+    }
+    .navbar-toggle {
+        margin-top: 10px!important;
+    }
+}
+
+@media(max-width: 487px) {
+    .width-adjust-freq {
+        width: 100% !important;
+    }
+    .choose-date {
+        width: 100% !important;
+    }
+    .time-slot-list {
+        width: 100% !important;
+    }
+    .display-none-mobile {
+        display: none !important;
+    }
+    .margin-left-10 {
+        margin-left: 10px !important;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*Mobile break header*/
+
+@media(max-width: 469px) {
+    .display-head-web {
+        display: none;
+    }
+    .display-head-mobile {
+        display: block;
+    }
+    .subtotal {
+        width: 33.3333% !important;
+    }
+    .pad-side-0 {
+        padding-left: 0 !important;
+        padding-right: 0 !important;
+    }
+    .margin-side-0 {
+        margin: 0 !important;
+        height: auto !important;
+    }
+    .margin-lr-0 {
+        margin-left: 0 !important;
+        margin-right: 0 !important;
+    }
+    .adjust-width-major {
+        width: 66.66666667% !important;
+    }
+    .adjust-width-minor {
+        width: 33.33333333% !important;
+    }
+    .pad-tb {
+        padding-top: 28px !important;
+        padding-bottom: 28px !important;
+    }
+    .font-15 {
+        font-size: 13px !important;
+    }
+    .booking-wrapper {
+        .booking-select {
+            .booking-body {
+                .room-container {
+                    width: 100% !important;
+                }
+            }
+        }
+    }
+    .width-clean-type {
+        width: 25% !important;
+    }
+    .margin-left-10 {
+        margin: 0 auto !important;
+    }
+    .width-adjust-freq {
+        width: 90% !important;
+    }
+    .rec-body span {
+        display: block;
+        width: 100%;
+        margin-bottom: 12px;
+        margin-right: 0;
+    }
+    .off-style {
+        font-size: 10px;
+    }
+    .access-width {
+        display: block !important;
+        width: 100% !important;
+        margin-bottom: 20px;
+    }
+    .pad-mobile {
+        padding: 25px !important;
+    }
+    .credit-card,
+    .user-creds {
+        display: block !important;
+        width: 100% !important;
+    }
+    .exp-date {
+        width: 50% !important;
+    }
+    .cvv {
+        width: 50% !important;
+    }
+    .margin-top-20 {
+        margin-top: 20px !important;
+    }
+    .stripe-element {
+        border-right: 1px solid #dae0e5 !important;
+    }
+}
+
+@media(max-width: 397px) {
+    .style-select-property {
+        display: block !important;
+        margin: 25px auto;
+        width: 80% !important;
+        border-right: 1px solid #dae0e5;
+    }
+    .style-select-property:first-child {
+        display: block !important;
+        margin: 0 auto 25px auto;
+        width: 80% !important;
+        border-right: 1px solid #dae0e5;
+    }
+    .adjust-panel-height {
+        height: calc(100% - 231px) !important;
+    }
+    .book-now {
+        width: 80% !important;
+    }
+    .pad-3-all {
+        padding: 5% 3% !important;
+    }
+}
+
+@media(max-width: 361px) {
+    .adjust-panel-height {
+        height: calc(100% - 241px) !important;
+    }
+    .footer-wrapper {
+        padding: 21px !important;
+    }
+}
+
+.text-overflow-ellipsis {
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+}

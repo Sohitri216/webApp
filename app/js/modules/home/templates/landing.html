@@ -1,0 +1,22 @@
+<div class="wrapper-landing container-fluid">
+    <div class="background-img-100">
+        <!-- <div class="book-parent"> -->
+        <div class="booking-wrapper">
+            <div class="booking-select" ng-init="init()">
+                <div class="booking-header tidi-header">Tidi Booking</div>
+                <div class="booking-body">
+                    <form class="booking-form" ng-submit="submitData">
+                        <select class="style-select-property border-right-0" ng-model="bedRoomCount">
+                            <option ng-repeat="bedroom in roomOptions" value="{{bedroom}}">{{bedroom}} Bedroom</option>
+                        </select>
+                         <select class="style-select-property border-right-0" ng-model="bathRoomCount">
+                            <option ng-repeat="bathroom in roomOptions" value="{{bathroom}}">{{bathroom}} Bathroom</option>
+                        </select>
+                        <button class="book-now" ng-click="submitData()">Book Now</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <!-- </div> -->
+    </div>
+</div>

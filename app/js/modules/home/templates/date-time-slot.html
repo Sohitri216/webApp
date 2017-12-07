@@ -1,0 +1,48 @@
+<div class="container-fluid pad-1">
+    <div class="booking-wrapper" ng-init="init()">
+        <div class="booking-select">
+            <div class="booking-header" ng-if="orderDetails.servicetype=='full'">How Frequent <span class="question-mark">?</span></div>
+            <div class="booking-body width-55 margin-auto width-adjust-freq margin-left-10" ng-if="orderDetails.servicetype=='full'">
+                <p class="location-header">RECURRING</p>
+                <div class="rec-body overflow-auto recurring-off">
+                    <span class="pull-left" ng-class="{'selected-span':rec.selected}" ng-repeat="rec in recurringType" ng-click="changeRentalType(rec)"><div>{{rec.value}}</div>
+                     <div ng-if="rec.off" class="off">{{rec.off}} % off</div>
+                     <!-- <div ng-if="!rec.off" class="off">No off</div></span> -->
+                </div>
+            </div>
+            <div class="booking-header pad-3 pad-bottom-5">When would like your home to be cleaned <span class="question-mark">?</span></div>
+            <p class="sub-header text-center">Save money by booking on non-peak dates</p>
+            <div class="choose-date">
+                <calendar selected="day" off="offRates" get-slot="getSlot" selected-day="orderDetails.startTime" class="calendar-style"></calendar>
+            </div>
+        </div>
+    </div>
+    <div class="booking-wrapper" ng-if="dateSelected && !offDay && timeSlot.length">
+        <div class="booking-select">
+            <div class="booking-header pad-3 pad-bottom-5">Choose a time that works for your schedule</div>
+            <div class="time-slot-list">
+                <ul class="pad-left-0">
+                    <li class="pad-3-all" ng-class="{'selected-time':time.selected,'busy-slot':!time.status}" ng-repeat="time in timeSlot" ng-click="selectSlot(time)">{{time.time}} <span class="pull-right" ng-if="!time.status">Blocked for the day</span></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <!--  <div class="booking-wrapper" ng-if="dateSelected && offDay">
+        <div class="booking-select">
+            <div class="booking-header pad-3 pad-bottom-5">Closed on Sunday</div>
+        </div>
+    </div> -->
+    <div class="booking-wrapper" ng-if="dateSelected && !timeSlot.length && dataLoaded">
+        <div class="booking-select">
+            <div class="booking-header pad-3 pad-bottom-5">All slots are booked in this date. Please choose a different date for service</div>
+        </div>
+    </div>
+    <div class="booking-wrapper" ng-if="dateSelected && !timeSlot.length && !dataLoaded">
+        <div class="booking-select">
+            <div class="booking-header pad-3 pad-bottom-5">Loading Booking Slots ...</div>
+        </div>
+    </div>
+    <div class="next-button" ng-if="dateSelected && timeSlot.length">
+        <button ng-click="submitdateInfo()">Next</button>
+    </div>
+</div>

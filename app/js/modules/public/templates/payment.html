@@ -1,0 +1,121 @@
+<div class="container-fluid" ng-init="init()">
+    <div class="row payment-container">
+        <form name="paymentForm" role="form" novalidate="" ui-form="paySubmit">
+            <div class="col-md-9 col-sm-10 col-xs-12 left-panel-payment pad-tp-6">
+                <div class="booking-wrapper">
+                    <div class="booking-select">
+                        <div class="booking-header pad-bt-0">Almost there<span class="question-mark">!</span></div>
+                        <p class="sub-header text-center line-height-1">Enter your payment &amp; contact info to finalize your appointment</p>
+                        <div class="booking-body">
+                            <div class="payment-container">
+                                <div class="credit-card">
+                                    <p class="location-header">CREDIT CARD</p>
+                                    <div class="location-body">
+                                        <input type="text" ng-model="paymentInfo.creditNumber" name="creditNumber" tooltip-enable="paymentForm.creditNumber.$invalid && paymentForm.creditNumber.$dirty" uib-tooltip="Please enter creditNumber." tooltip-append-to-body="true" tooltip-placement="left" ng-class="{'valid-field-logo':paymentForm.creditNumber.$valid,'invalid-field-logo':paymentForm.creditNumber.$invalid && paymentForm.creditNumber.$dirty}" ui-required ui-allowed-upto="16" ui-minlength="16" ui-number />
+                                    </div>
+                                </div>
+                                <div class="exp-date">
+                                    <p class="location-header">EXP. DATE</p>
+                                    <div class="location-body">
+                                        <input type="text" placeholder="MM/YYYY" ng-model="paymentInfo.expDate" name="expTime" tooltip-enable="paymentForm.expTime.$invalid && paymentForm.expTime.$dirty" uib-tooltip="Please enter expTime." tooltip-append-to-body="true" tooltip-placement="top" ng-class="{'valid-field-logo':paymentForm.expTime.$valid,'invalid-field-logo':paymentForm.expTime.$invalid && paymentForm.expTime.$dirty}" ui-pattern="expPattern" ui-allowed-upto="7" ui-required/>
+                                    </div>
+                                </div>
+                                <div class="cvv">
+                                    <p class="location-header">CVV</p>
+                                    <div class="location-body">
+                                        <input type="text" ng-model="paymentInfo.cvv" name="cvv" tooltip-enable="paymentForm.cvv.$invalid && paymentForm.cvv.$dirty" uib-tooltip="Please enter cvv." tooltip-append-to-body="true" tooltip-placement="right" ng-class="{'valid-field-logo':paymentForm.cvv.$valid,'invalid-field-logo':paymentForm.cvv.$invalid && paymentForm.cvv.$dirty}" ui-required ui-allowed-upto="3" ui-minlength="3" ui-number/>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="user-info-container overflow-auto">
+                                <div class="user-creds pull-left">
+                                    <p class="location-header">FULL NAME</p>
+                                    <div class="location-body">
+                                        <input type="text" name="fullName" ng-model="paymentInfo.fullName" tooltip-enable="paymentForm.fullName.$invalid && paymentForm.fullName.$dirty" uib-tooltip="Please enter fullName." tooltip-append-to-body="true" tooltip-placement="left" ng-class="{'valid-field-logo':paymentForm.fullName.$valid,'invalid-field-logo':paymentForm.fullName.$invalid && paymentForm.fullName.$dirty}" ui-required ui-pattern="fullName">
+                                    </div>
+                                </div>
+                                <div class="user-creds pull-right">
+                                    <p class="location-header">EMAIL ADDRESS</p>
+                                    <div class="location-body">
+                                        <input type="text" name="email" ng-model="paymentInfo.email" tooltip-enable="paymentForm.email.$invalid && paymentForm.email.$dirty" uib-tooltip="Please enter email." tooltip-append-to-body="true" tooltip-placement="right" ng-class="{'valid-field-logo':paymentForm.email.$valid,'invalid-field-logo':paymentForm.email.$invalid && paymentForm.email.$dirty}" ui-required ui-email>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="user-info-container overflow-auto">
+                                <div class="user-creds pull-left">
+                                    <p class="location-header">PHONE</p>
+                                    <div class="location-body">
+                                        <input type="text" name="contact" ng-model="paymentInfo.phone" tooltip-enable="paymentForm.contact.$invalid && paymentForm.contact.$dirty" uib-tooltip="Please enter contact." tooltip-append-to-body="true" tooltip-placement="left" ng-class="{'valid-field-logo':paymentForm.contact.$valid,'invalid-field-logo':paymentForm.contact.$invalid && paymentForm.contact.$dirty}" ui-required ui-allowed-upto="10" ui-minlength="10" ui-number/>
+                                    </div>
+                                </div>
+                                <div class="user-creds pull-right">
+                                    <p class="location-header">HOW DO WE CONTACT YOU?</p>
+                                    <div class="location-body">
+                                        <div class="contact-container">
+                                            <span ng-class="{'selected-span-border':contact.selected}" ng-repeat="contact in contactType" ng-click="contactMethod(contact.value)">{{contact.value}}</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Password container for future use -->
+                            <!--    <div class="user-info-container overflow-auto">
+                                <div class="user-creds pull-left">
+                                    <p class="location-header">PASSWORD</p>
+                                    <div class="location-body">
+                                        <input type="password">
+                                    </div>
+                                </div>
+                                <div class="user-creds pull-right">
+                                    <p class="location-header">CONFIRM PASSWORD</p>
+                                    <div class="location-body">
+                                        <input type="password">
+                                    </div>
+                                </div>
+                            </div> -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3 col-sm-2 col-xs-12 right-panel-receipt pad-top-2 backgroung-grey pad-bt-6 opacity-receipt">
+                <div class="receipt-wrapper">
+                    <div class="receipt-header">Receipt</div>
+                    <div class="receipt-details">
+                        <p class="margin-tp-10">{{customerdetails.bedCount}} Bedroom, {{customerdetails.bathCount}} Bathroom</p>
+                        <p class="divider"></p>
+                        <p class="margin-tp-10">{{rentalType}}, {{customerdetails.date}}, {{serviceYear}} at {{serviceTime}}</p>
+                        <p class="divider"></p>
+                        <div class="margin-tp-10">
+                            <!-- <p class="mb-0">New Market Street, 1735</p>
+                            <p>Philadelphia, PA 1921</p> -->
+                            <!-- <p class="mb-0">New Market Street, 1735</p> -->
+                            <p>{{customerdetails.address}}</p>
+                        </div>
+                        <p class="divider"></p>
+                        <div class="margin-tp-10 margin-bt-10">
+                            <span>Add On:</span>
+                            <span>{{addServName}}</span>
+                        </div>
+                        <p class="divider"></p>
+                        <div class="width-100 margin-tp-10">
+                            <span class="inline-block total-span bold-total">SUBTOTAL</span>
+                            <span class="inline-block amount-span bold-total">&#36;{{finalPrice}}</span>
+                        </div>
+                        <div class="width-100 margin-bt-10">
+                            <span class="inline-block total-span">Tax</span>
+                            <span class="inline-block amount-span">+&#36;{{taxOnTotal}}</span>
+                        </div>
+                        <p class="divider"></p>
+                        <div class="width-100 margin-tp-10">
+                            <span class="inline-block total-span bold-total">TOTAL</span>
+                            <span class="inline-block amount-span bold-total">&#36;{{totalPrice}}</span>
+                        </div>
+                        <div class="submit-button margin-16">
+                            <button type="submit" ng-if="!vm.showSpinner">Submit</button>
+                            <button class="disable-button" ng-if="vm.showSpinner" ng-disabled="true"><i class="fa fa-spinner fa-pulse fa-fw spinner-font"></i></button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>

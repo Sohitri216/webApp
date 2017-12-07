@@ -1,0 +1,25 @@
+<div class="header-booking-details">
+    <div class="customer-details" ng-if="customerdetails.bedCount" ng-click="navigate('room')">
+        <div class="room-count font-15">{{customerdetails.bedCount}}</div>
+        <div class="room-label">BEDROOMS</div>
+    </div>
+    <div class="customer-details" ng-if="customerdetails.bathCount" ng-click="navigate('room')">
+        <div class="room-count font-15">{{customerdetails.bathCount}}</div>
+        <div class="room-label">BATHROOMS</div>
+    </div>
+    <div class="customer-details width-20" ng-if="customerdetails.date" ng-click="navigate('date')">
+        <div class="room-count font-15">{{customerdetails.date}}</div>
+        <div class="room-label">SCHEDULE DATE</div>
+    </div>
+    <div class="customer-details width-20" ng-if="customerdetails.address" ng-click="navigate('address')">
+        <div class="room-count adjust-address font-15">{{customerdetails.address}}</div>
+        <div class="room-label">ADDRESS</div>
+    </div>
+    <div class="subtotal pull-right" ng-if="customerdetails.price" ng-click="navigate('payment')">
+        <div class="total-price font-15"><sup class="sup-dollar">&#36;</sup> {{customerdetails.price}}</div>
+        <div class="total-label">SUBTOTAL</div>
+    </div>
+</div>
+<div class="wrapper-landing-child" ng-class="{'wrap-height':heightWrap}">
+    <div ui-view class="background-img-100" ng-class="{'adjust-dateTime-height':controlBackgroundImage}"></div>
+</div>

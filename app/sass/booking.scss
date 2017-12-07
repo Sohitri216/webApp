@@ -1,0 +1,712 @@
+.booking-wrapper {
+    display: table;
+    /*position: absolute;*/
+    height: 100%;
+    width: 100%;
+    .booking-select {
+        width: 30%;
+        margin: 0 auto;
+        display: table-cell;
+        vertical-align: middle;
+        .booking-body {
+            text-align: center;
+            .book-now {
+                font-family: 'FuturaPTMedium';
+                padding: 11px 15px 11px 15px;
+                width: 15%;
+                background-color: $book-butn;
+                border: 0;
+                color: #fff;
+                border-width: 1px 1px 1px 1px;
+                border-style: solid;
+                border-color: $book-butn;
+            }
+            .book-now:active {
+                background-color: $book-butn;
+                border-width: 1px 1px 1px 1px;
+                border-style: solid;
+                border-color: $book-butn;
+            }
+            .book-now:focus {
+                background-color: $book-butn;
+                border-width: 1px 1px 1px 1px;
+                border-style: solid;
+                border-color: $book-butn;
+            }
+            .book-now:hover {
+                background-color: $book-butn-hover;
+                border-width: 1px 1px 1px 1px;
+                border-style: solid;
+                border-color: $book-butn;
+                color: $book-butn
+            }
+            .booking-form {
+                margin-bottom: 20px;
+                .style-select-property {
+                    display: inline-block;
+                    width: 115px;
+                    padding: 10px 15px;
+                    width: 14%;
+                    background-color: #fff;
+                    border-color: $selectbox-border;
+                    font-family: 'FuturaPTMedium';
+                    background-image: url('../resources/img/down_arrow.png');
+                    background-repeat: no-repeat;
+                    background-position: 96% 53%;
+                    background-size: 10px;
+                }
+                select {
+                    -webkit-appearance: none;
+                    -moz-appearance: none;
+                    /*display: none;*/
+                    content: '../resources/img/down_arrow.png';
+                }
+            }
+            .room-container {
+                width: 50%;
+                margin: 0 auto;
+                .room-header {
+                    text-align: left;
+                    font-family: 'FuturaPTMedium';
+                }
+                .room-header-bathroom {
+                    text-align: left;
+                    font-family: 'FuturaPTMedium';
+                    margin-top: 18px;
+                    margin-bottom: 5px;
+                }
+                .room-body {
+                    font-family: 'FuturaPTMedium';
+                    text-align: left;
+                    span {
+                        cursor: pointer;
+                        display: inline-block;
+                        background-color: #fff;
+                        /* padding: 10px 62px; */
+                        border: 1px solid $selectbox-border;
+                        width: 20%;
+                        padding: 10px 0;
+                        text-align: center;
+                    }
+                    span:not(:first-child) {
+                        border-left: 0px;
+                    }
+                    .selected-span {
+                        background-color: #0c45a7;
+                        color: #fff;
+                    }
+                }
+            }
+            .location-container {
+                width: 55%;
+                margin: 0 auto;
+                .address-field {
+                    display: inline-block;
+                    width: 82%;
+                    .location-header {
+                        text-align: left;
+                        font-family: 'FuturaPTMedium';
+                        font-size: 11px;
+                        margin-bottom: 5px;
+                    }
+                    .location-body {
+                        text-align: left;
+                        input {
+                            width: 100%;
+                            padding: 10px;
+                            border: 1px solid $selectbox-border;
+                            border-right: 0;
+                        }
+                        input::-webkit-input-placeholder {
+                            font-family: 'FuturaPTMedium';
+                            color: $placeholder-text-color
+                        }
+                    }
+                }
+                .appartment-field {
+                    display: inline-block;
+                    width: 18%;
+                    .location-header {
+                        text-align: left;
+                        font-family: 'FuturaPTMedium';
+                        font-size: 11px;
+                        margin-bottom: 5px;
+                    }
+                    .location-body {
+                        text-align: left;
+                        input {
+                            width: 100%;
+                            padding: 10px;
+                            border: 1px solid $selectbox-border;
+                        }
+                    }
+                }
+                /*.location-header {
+                    text-align: left;
+                    font-family: 'FuturaPTMedium';
+                }*/
+                .location-field {
+                    width: 100%;
+                    margin-top: 30px;
+                    .location-header {
+                        text-align: left;
+                        font-family: 'FuturaPTMedium';
+                        font-size: 11px;
+                        margin-bottom: 5px;
+                    }
+                    /*use mixin*/
+                    .room-body {
+                        font-family: 'FuturaPTMedium';
+                        span {
+                            cursor: pointer;
+                            display: inline-block;
+                            background-color: #fff;
+                            /* padding: 10px 62px; */
+                            border: 1px solid $selectbox-border;
+                            width: 31.3%;
+                            padding: 10px 10px;
+                            /*text-align: left;*/
+                            label {
+                                cursor: pointer;
+                                margin-bottom: 0;
+                                font-weight: normal;
+                            }
+                        }
+                        span:not(:first-child) {
+                            /*border-left: 0px;*/
+                        }
+                        span:not(:last-child) {
+                            margin-right: 20px;
+                        }
+                        span:nth-child(3n+3) {
+                            margin-right: 0px !important;
+                        }
+                        .selected-span {
+                            background-color: #0c45a7;
+                            color: #fff;
+                        }
+                    }
+                    .other-way {
+                        margin-top: 10px;
+                        textarea {
+                            width: 100%;
+                            font-family: 'FuturaPTMedium';
+                            border: 1px solid $selectbox-border;
+                            resize: none;
+                        }
+                        textarea::-webkit-textarea-placeholder {
+                            font-family: 'FuturaPTMedium';
+                            color: $placeholder-text-color;
+                        }
+                    }
+                }
+            }
+            .payment-container {
+                width: 75%;
+                margin: 0 auto;
+                .stripe-element {
+                    background-color: #fff;
+                }
+                .credit-card {
+                    display: inline-block;
+                    width: 60%;
+                    .location-header {
+                        text-align: left;
+                        font-family: 'FuturaPTMedium';
+                        font-size: 11px;
+                        margin-bottom: 5px;
+                    }
+                    .location-body {
+                        text-align: left;
+                        input,
+                        .stripe-element {
+                            width: 100%;
+                            padding: 10px;
+                            border: 1px solid $selectbox-border;
+                            border-right: 0;
+                        }
+                        input::-webkit-input-placeholder {
+                            font-family: 'FuturaPTMedium';
+                            color: $placeholder-text-color
+                        }
+                    }
+                }
+                .exp-date {
+                    display: inline-block;
+                    width: 20%;
+                    .location-header {
+                        text-align: left;
+                        font-family: 'FuturaPTMedium';
+                        font-size: 11px;
+                        margin-bottom: 5px;
+                    }
+                    .location-body {
+                        text-align: left;
+                        input,
+                        .stripe-element {
+                            width: 100%;
+                            padding: 10px;
+                            border: 1px solid $selectbox-border;
+                            border-right: 0;
+                        }
+                        input::-webkit-input-placeholder {
+                            font-family: 'FuturaPTMedium';
+                            color: $placeholder-text-color
+                        }
+                    }
+                }
+                .cvv {
+                    display: inline-block;
+                    width: 20%;
+                    .location-header {
+                        text-align: left;
+                        font-family: 'FuturaPTMedium';
+                        font-size: 11px;
+                        margin-bottom: 5px;
+                    }
+                    .location-body {
+                        text-align: left;
+                        input,
+                        .stripe-element {
+                            width: 100%;
+                            padding: 10px;
+                            border: 1px solid $selectbox-border;
+                            /*border-right: 0;*/
+                        }
+                        input::-webkit-input-placeholder {
+                            font-family: 'FuturaPTMedium';
+                            color: $placeholder-text-color
+                        }
+                    }
+                }
+            }
+            .user-info-container {
+                width: 75%;
+                margin: 0 auto;
+                margin-top: 20px;
+                .user-creds {
+                    display: inline-block;
+                    width: 48%;
+                    .location-body {
+                        /*width: 98%;*/
+                        input {
+                            width: 100%;
+                            padding: 10px;
+                            border: 1px solid $selectbox-border;
+                        }
+                        .contact-container {
+                            display: inline-block;
+                            width: 100%;
+                            span {
+                                display: inline-block;
+                                font-family: 'FuturaPTMedium';
+                                cursor: pointer;
+                                background-color: #fff;
+                                /* padding: 10px 62px; */
+                                border: 1px solid $selectbox-border;
+                                width: 33.3%;
+                                padding: 10px 5px;
+                                /*text-align: left;*/
+                                label {
+                                    margin-bottom: 0;
+                                    font-weight: normal;
+                                }
+                            }
+                            span:not(:first-child) {
+                                border-left: 0px;
+                            }
+                            .selected-span {
+                                background-color: #0c45a7;
+                                color: #fff;
+                            }
+                        }
+                    }
+                }
+            }
+            .next-button {
+                margin-top: 30px;
+                button {
+                    font-family: 'FuturaPTMedium';
+                    background-color: #111;
+                    border: 1px solid #111;
+                    color: #fff;
+                    padding: 10px 27px;
+                    border-radius: 2px;
+                }
+                button:hover {
+                    background-color: #fff;
+                    border: 1px solid #111;
+                    color: #111;
+                }
+            }
+        }
+        .booking-header {
+            text-align: center;
+            color: $tidi-heading;
+            font-size: 25px;
+            font-weight: bold;
+            padding-bottom: 20px;
+            padding-top: 20px;
+            font-family: 'FuturaPTBook';
+        }
+        .sub-header {
+            font-size: 15px;
+            padding-bottom: 20px;
+            font-family: 'FuturaPTMedium';
+            color: $sub-heading-color;
+        }
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*Payment-container*/
+
+.payment-container {
+    .left-panel-payment {
+        width: 70% !important;
+        right: 30% !important;
+    }
+    .right-panel-receipt {
+        width: 30% !important;
+        left: 70% !important;
+        .receipt-wrapper {
+            .receipt-header {
+                color: $tidi-heading;
+                font-size: 25px;
+                font-weight: bold;
+                font-family: 'FuturaPTBook';
+            }
+            .receipt-details {
+                font-size: 13px;
+                text-align: left;
+                font-family: 'FuturaPTMedium';
+                margin-bottom: 5px;
+                color: $tidi-heading;
+                .divider {
+                    border-top-width: 1px;
+                    border-top-style: solid;
+                    border-top-color: $divider;
+                }
+                .total-span {
+                    width: 30%;
+                    text-align: left;
+                }
+                .amount-span {
+                    width: 68%;
+                    text-align: right;
+                }
+            }
+            .submit-button {
+                button {
+                    width: 100%;
+                    padding: 7px;
+                    font-size: 19px;
+                    background-color: #00f4d4;
+                    border: 1px;
+                    color: #fff;
+                }
+            }
+        }
+    }
+}
+
+.rec-body {
+    font-family: 'FuturaPTMedium';
+    span {
+        cursor: pointer;
+        display: inline-block;
+        background-color: #fff;
+        /* padding: 10px 62px; */
+        border: 1px solid $selectbox-border;
+        width: 31%;
+        padding: 10px 28px;
+        margin-right: 2%;
+    }
+}
+
+.recurring-off {
+    span {
+        min-height: 60px;
+        .off {
+            font-size: 11px;
+            font-family: 'FuturaPTMediumOblique';
+            color: #a1a5a7;
+        }
+    }
+    .selected-span {
+        .off {
+            color: #fff;
+        }
+    }
+}
+
+.location-header {
+    text-align: left;
+    font-family: 'FuturaPTMedium';
+    font-size: 11px;
+    margin-bottom: 5px;
+}
+
+.time-slot-list {
+    width: 42%;
+    margin: 0 auto;
+    ul {
+        li {
+            list-style-type: none;
+            border-bottom-width: 1px;
+            border-bottom-style: solid;
+            border-bottom-color: $sub-heading-color;
+            cursor: pointer;
+            font-size: 14px;
+            font-family: 'FuturaPTMedium';
+            color: $tidi-heading;
+        }
+        li:hover {
+            background-color: $book-butn;
+            color: #fff;
+        }
+    }
+}
+
+
+
+.submit-button {
+    font-family: 'FuturaPTMedium';
+    button {
+        width: 100%;
+        padding: 7px;
+        font-size: 19px;
+        background-color: #00f4d4;
+        border: 1px;
+        color: #fff;
+    }
+}
+
+
+.submit-tab {
+    display: none;
+}
+
+.submit-desktop {
+    display: block;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*.disable-button{
+    background-color: 
+}*/
+
+@media(max-width: 956px) {
+    .room-container {
+        width: 75% !important;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*@media(max-width: 764px) {
+    .booking-wrapper {
+        .booking-select {
+            .booking-body {
+                .location-container {
+                    width: 85% !important;
+                }
+            }
+        }
+    }
+}*/
+
+@media(max-width: 768px) {
+    .booking-wrapper {
+        .booking-select {
+            .booking-body {
+                .room-container {
+                    width: 90% !important;
+                }
+            }
+        }
+    }
+}
+
+@media(max-width: 765px) {
+    .style-select-property {
+        width: 20% !important;
+    }
+    .book-now {
+        width: 20% !important;
+    }
+}
+
+@media(max-width: 642px) {
+    .payment-container {
+        .left-panel-payment {
+            width: 100% !important;
+            right: auto !important;
+            padding-left: 25px;
+            padding-right: 25px;
+        }
+        .right-panel-receipt {
+            width: 100% !important;
+            left: auto !important;
+            text-align: center;
+            padding-left: 25px !important;
+            padding-right: 25px !important;
+            padding-top: 6%;
+        }
+    }
+    .submit-tab {
+        display: block;
+        width: 90%;
+        margin: 16% auto;
+    }
+    .submit-desktop {
+        display: none;
+    }
+    .booking-wrapper {
+        .booking-select {
+            .booking-body {
+                .payment-container {
+                    width: 90% !important;
+                }
+                .user-info-container {
+                    width: 90% !important;
+                }
+            }
+        }
+    }
+}
+
+@media(max-width: 624px) {
+    .style-select-property {
+        width: 25% !important;
+    }
+    .book-now {
+        width: 25% !important;
+    }
+}
+
+
+@media(max-width: 558px) {
+
+    .left-panel-payment {
+        padding-left: 5px !important;
+        padding-right: 5px !important;
+    }
+}
+
+@media(max-width: 510px) {
+    .booking-wrapper {
+        .booking-select {
+            .booking-body {
+                .location-container {
+                    width: 98% !important;
+                }
+            }
+        }
+    }
+}
+
+
+
+@media(max-width: 480px) {
+    .style-select-property {
+        width: 30% !important;
+    }
+    .book-now {
+        width: 30% !important;
+    }
+}
