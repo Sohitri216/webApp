@@ -1,6 +1,6 @@
-# TIDIcleaning
+#Sample Angular webApp
 
-Frontend app for TIDI booking app
+
 ### instruction
 
 Requires [Node.js](https://nodejs.org/) v4+ to run.
